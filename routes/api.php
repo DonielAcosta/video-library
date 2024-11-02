@@ -22,6 +22,7 @@ use App\Http\Controllers\AuthController;
 // });
 
 Route::post('register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/videos/search', [VideoController::class, 'search'])->name('videos.search');
 Route::resource('videos', VideoController::class)->except(['create', 'edit']);

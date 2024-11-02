@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "8f6f7432-6a13-46e6-9559-ecfa9cc9fa03",
+		"name": "video-library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15524550",
+		"_collection_link": "https://donielacosta1995.postman.co/workspace/Doniel~276f73a9-a89f-411f-aecd-2566b6dfcdad/collection/15524550-8f6f7432-6a13-46e6-9559-ecfa9cc9fa03?action=share&source=collection_link&creator=15524550"
+	},
+	"item": [
+		{
+			"name": "video",
+			"item": [
+				{
+					"name": "videos listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/videos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "videos listar Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/videos/search?searchDucimus",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"videos",
+								"search"
+							],
+							"query": [
+								{
+									"key": "searchDucimus",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Nuevo Video\",\n    \"description\": \"Descripción del nuevo video\",\n    \"youtube_url\": \"https://www.youtube.com/watch?v=9dcVOmEQzKA&list=RDEMASZzAB4N6PSfsOwzAhxYyQ&index=16\",\n    \"user_id\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/videos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar video",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"venom\",\n    \"description\": \"Descripción del nuevo video\",\n    \"youtube_url\": \"https://www.youtube.com/watch?v=9dcVOmEQzKA&list=RDEMASZzAB4N6PSfsOwzAhxYyQ&index=16\",\n    \"user_id\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/videos/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"videos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar video",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/videos/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"videos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/videos/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"videos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searh",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/videos/search?search=Sample%20Video",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"videos",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Sample%20Video"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"jose\",\n    \"email\": \"jose@gmail.com\",\n    \"password\": \"123456789\",\n    \"password_confirmation\": \"123456789\",\n    \"role\": \"admin\" // o \"admin\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"jose@gmail.com\",\n  \"password\": \"123456789\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "analisis estadisticas",
+			"item": [
+				{
+					"name": "vistas numero de busqueda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"video_id\": 2,\n    \"views\": 8,      // Número de vistas actualizado\n    \"searches\": 10    // Número de búsquedas (si aplica)\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/videos/5/analytics/views",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"videos",
+								"5",
+								"analytics",
+								"views"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/videos/5/analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"videos",
+								"5",
+								"analytics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
